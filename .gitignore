@@ -1,9 +1,2 @@
-### IntelliJ IDEA ###
+.iml
 .idea
-*.iws
-*.iml
-*.ipr
-
-.gradle
-/build/
-!gradle/wrapper/gradle-wrapper.jar
