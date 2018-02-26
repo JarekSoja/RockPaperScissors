@@ -5,8 +5,8 @@ public class HumanPlayer implements Player {
     private String name;
     private int points;
 
-    public HumanPlayer() {
-        this.name = ""
+    HumanPlayer() {
+        this.name = "";
         this.points = 0;
     }
 

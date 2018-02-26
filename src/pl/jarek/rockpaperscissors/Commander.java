@@ -1,11 +1,12 @@
 package pl.jarek.rockpaperscissors;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Commander {
 
     private Scanner reader = new Scanner(System.in);
-    private int[][] results = new int[3][3];
+    private Random random = new Random();
 
     public int welcomeMenu(){
         System.out.println("Hello!\nWe are going to play rock scissors paper game. Please choose game mode:\n1. Classic game we all know and love");
@@ -24,9 +25,9 @@ public class Commander {
         System.out.println("Summarizing: \n 5 beats 4 that beats 3 that beats 2 that beats 1 that beats 5");
     }
 
-    public void showCurrentStats(){
-        System.out.println("");
-
+    public void showCurrentStats(int playerPoints, int computerPoints, int roundNumber, String playerName){
+        System.out.println(playerName + " has " + playerPoints + " point/s\nComputer has " + computerPoints + " point/s.");
+        System.out.println(roundNumber + " rounds left to play.");
     }
 
     public void setPlayerName(HumanPlayer player){
@@ -34,14 +35,36 @@ public class Commander {
         player.setName(reader.nextLine());
     }
 
-    public void setNumberOfRounds(Processor processor){
+    public int setNumberOfRounds(){
         System.out.println("Please enter number of rounds you wish to play: ");
-        processor.setRoundCounter(reader.nextInt());
+       return reader.nextInt();
+
     }
 
     public int getPlayerMove(){
-        System.out.println("Please choose your move: \n Press '0' for rock\nPress '1' for paper\nPress '2' for scissors");
-        int playerMove = reader.nextInt();
+        System.out.println("Please choose your move: \nPress '0' for rock\nPress '1' for paper\nPress '2' for scissors");
+        return reader.nextInt();
 
+    }
+
+    public int getComputerMove(){
+        return random.nextInt(2);
+    }
+
+    public void announceRoundResult(int result){
+        if (result < 0){
+            System.out.println("I won!");
+        } else if (result > 0) {
+            System.out.println("You won!");
+        } else System.out.println("It's a draw!");
+    }
+
+    public void announceFinalResults(int playerPoints, int computerPoints, String playerName){
+        System.out.println("Game finished");
+        System.out.println("Player " + playerName + " got " + playerPoints + " points.");
+        System.out.println(" Player Computer got " + computerPoints + " points");
+        if (playerPoints < computerPoints) System.out.println("Computer won! Better luck next time.");
+        else if (playerPoints > computerPoints) System.out.println("You won! Good job.");
+        else System.out.println("Draw. We should play again to settle the score, hombre.");
     }
 }

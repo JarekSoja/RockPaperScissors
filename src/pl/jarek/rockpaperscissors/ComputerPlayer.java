@@ -5,7 +5,7 @@ public class ComputerPlayer implements Player {
     private String name;
     private int points;
 
-    public ComputerPlayer() {
+    ComputerPlayer() {
         this.name = "Computer";
         this.points = 0;
     }
