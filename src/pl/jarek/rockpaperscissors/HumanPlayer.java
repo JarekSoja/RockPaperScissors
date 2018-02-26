@@ -2,23 +2,30 @@ package pl.jarek.rockpaperscissors;
 
 public class HumanPlayer implements Player {
 
+    private String name;
+    private int points;
+
+    public HumanPlayer() {
+        this.name = ""
+        this.points = 0;
+    }
+
     @Override
     public String getName() {
-        return null;
+        return this.name;
+    }
+
+    public void setName(String name){
+        this.name=name;
     }
 
     @Override
     public int getPoints() {
-        return 0;
+        return this.points;
     }
 
     @Override
     public void addPoint() {
-
-    }
-
-    @Override
-    public void chooseYourMove() {
-
+        this.points++;
     }
 }

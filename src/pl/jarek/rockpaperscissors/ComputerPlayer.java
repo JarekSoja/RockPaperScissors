@@ -2,23 +2,25 @@ package pl.jarek.rockpaperscissors;
 
 public class ComputerPlayer implements Player {
 
+    private String name;
+    private int points;
+
+    public ComputerPlayer() {
+        this.name = "Computer";
+        this.points = 0;
+    }
+
     @Override
     public String getName() {
-        return null;
+        return this.name;
+    }
+    @Override
+    public int getPoints () {
+        return this.points;
     }
 
     @Override
-    public int getPoints() {
-        return 0;
-    }
-
-    @Override
-    public void addPoint() {
-
-    }
-
-    @Override
-    public void chooseYourMove() {
-
+    public void addPoint () {
+        this.points++;
     }
 }

@@ -1,15 +1,15 @@
 package pl.jarek.rockpaperscissors;
 
-import java.util.Arrays;
-
 public class Processor {
 
     private int playerPoints;
     private int computerPoints;
     private int roundCounter;
+    private
     private int[][] results = {
-            {0, 1, 2},
-            {0, 1, 2}
+            {0, -1, 1},
+            {1, 0, -1},
+            {-1, 1, 0}
     };
 
     public Processor(int rounds){
@@ -22,15 +22,21 @@ public class Processor {
 
     }
 
-    private void addPointToHuman(){
+    private int setRoundResult(int playerMove, int computerMove) {
+        int result = results[playerMove][computerMove];
+        return result;
+    }
+
+    public void setRoundCounter(int numberOfRounds){
+        this.roundCounter = numberOfRounds;
 
     }
 
-    private void addPointToComputer(){
-
+    private void substractRoundCounter(){
+        this.roundCounter--;
     }
 
-    private void setRoundResult() {
+    public int getPlayerMove(){
 
     }
 }

@@ -8,8 +8,4 @@ public interface Player {
 
     void addPoint();
 
-    void chooseYourMove();
-
-
-
 }

@@ -29,16 +29,19 @@ public class Commander {
 
     }
 
-    public void setName(Player player){
-
+    public void setPlayerName(HumanPlayer player){
+        System.out.println("Please enter your name: ");
+        player.setName(reader.nextLine());
     }
 
-    public void setNumberOfRounds(){
-
+    public void setNumberOfRounds(Processor processor){
+        System.out.println("Please enter number of rounds you wish to play: ");
+        processor.setRoundCounter(reader.nextInt());
     }
 
     public int getPlayerMove(){
-        return 0;
+        System.out.println("Please choose your move: \n Press '0' for rock\nPress '1' for paper\nPress '2' for scissors");
+        int playerMove = reader.nextInt();
 
     }
 }
