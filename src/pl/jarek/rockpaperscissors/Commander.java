@@ -8,8 +8,13 @@ public class Commander {
     private Scanner reader = new Scanner(System.in);
     private Random random = new Random();
 
+    public String createNewPlayer(){
+        System.out.println("Hello! Please give me your name.");
+        return reader.next();
+    }
+
     public int welcomeMenu(){
-        System.out.println("Hello!\nWe are going to play rock scissors paper game. Please choose game mode:\n1. Classic game we all know and love");
+        System.out.println("We are going to play rock scissors paper game. Please choose game mode:\n1. Classic game we all know and love");
         System.out.println("2. Extreme Halloween mode where we will be using tools straight from classic horror movies.");
         return reader.nextInt();
     }
@@ -30,25 +35,41 @@ public class Commander {
         System.out.println(roundNumber + " rounds left to play.");
     }
 
-    public void setPlayerName(HumanPlayer player){
-        System.out.println("Please enter your name: ");
-        player.setName(reader.nextLine());
-    }
-
     public int setNumberOfRounds(){
         System.out.println("Please enter number of rounds you wish to play: ");
-       return reader.nextInt();
-
+        boolean correctValue = false;
+        int value = 0;
+        do {
+            String input = reader.next();
+            try {
+                value = Integer.parseInt(input);
+                correctValue = input.chars().allMatch(Character::isDigit);
+            } catch (Exception e) {
+                System.out.println("Incorrect value.");
+            }
+        } while (!correctValue);
+       return value;
     }
 
     public int getPlayerMove(){
         System.out.println("Please choose your move: \nPress '0' for rock\nPress '1' for paper\nPress '2' for scissors");
-        return reader.nextInt();
-
-    }
-
-    public int getComputerMove(){
-        return random.nextInt(2);
+        boolean correctValue = false;
+        int value = 0;
+        do {
+            String input = reader.next();
+            try {
+                value = Integer.parseInt(input);
+                if (value < 0 || value > 2) {
+                    correctValue = false;
+                    System.out.println("Incorrect value.");
+                } else {
+                    correctValue = true;
+                }
+            } catch (Exception e) {
+                System.out.println("Incorrect value.");
+            }
+        } while (!correctValue);
+        return value;
     }
 
     public void announceRoundResult(int result){
