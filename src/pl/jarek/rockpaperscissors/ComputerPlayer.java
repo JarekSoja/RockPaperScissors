@@ -2,7 +2,7 @@ package pl.jarek.rockpaperscissors;
 
 import java.util.Random;
 
-public class ComputerPlayer implements Player {
+class ComputerPlayer implements Player {
 
     private final String NAME;
     private int points;
@@ -30,5 +30,9 @@ public class ComputerPlayer implements Player {
 
     public int getComputerMove(){
         return random.nextInt(2);
+    }
+
+    public int getComputerMoveInFive(){
+        return random.nextInt(4)+1;
     }
 }

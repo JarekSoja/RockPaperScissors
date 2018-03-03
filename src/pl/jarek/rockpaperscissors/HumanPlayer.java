@@ -1,11 +1,11 @@
 package pl.jarek.rockpaperscissors;
 
-public class HumanPlayer implements Player {
+class HumanPlayer implements Player {
 
     private final String NAME;
     private int points;
 
-    public HumanPlayer(String NAME) {
+    HumanPlayer(String NAME) {
         this.NAME = NAME;
     }
 

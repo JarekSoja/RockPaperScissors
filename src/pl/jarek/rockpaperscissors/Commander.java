@@ -1,28 +1,34 @@
 package pl.jarek.rockpaperscissors;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Commander {
 
     private Scanner reader = new Scanner(System.in);
-    private Random random = new Random();
 
     public String createNewPlayer(){
-        System.out.println("Hello! Please give me your name.");
+        System.out.println("Please give me your name.");
         return reader.next();
     }
 
     public int welcomeMenu(){
-        System.out.println("We are going to play rock scissors paper game. Please choose game mode:\n1. Classic game we all know and love");
+        System.out.println("Hi! We are going to play rock scissors paper game. Please choose game mode:\n1. Classic game we all know and love");
         System.out.println("2. Extreme Halloween mode where we will be using tools straight from classic horror movies.");
-        return reader.nextInt();
+        do {
+            int gameMode = (reader.nextInt());
+            if (gameMode == 1 || gameMode == 2) {
+                return gameMode;
+            } else {
+                System.out.println("Incorrect value.");
+            }
+        } while (true);
+
     }
 
     public void showInstructions(){
         System.out.println("So you want to taste the fear?\nWe will be playing extreme halloween version of everyone's favourite game with iconic horror monsters as our pawns.");
         System.out.println("First will be Jason Vorhees straight from Friday the 13th series with his iconic machete\nPress '1' to choose him.");
-        System.out.println("Second is Freddie Krueger coming from Elm Street packing unforgettable glove that wrecks Jason!\n Press '2' to choose him.");
+        System.out.println("Second is Freddie Krueger coming from Elm Street packing unforgettable glove that wrecks Jason!\nPress '2' to choose him.");
         System.out.println("Third is Michael Myers with huge kitchen knife that makes holes in this striped jumper of Freddie's\nPress '3' to choose him.");
         System.out.println("Fourth contestant - GhostFace from Scream with his/her creepy phone that makes Michael Myers faint.\nPress '4' to choose him/her");
         System.out.println("Last but not least is Xenomorph that easily beast cheap phone tricks of GhostFace.\nPress '5' to choose it");
@@ -71,6 +77,29 @@ public class Commander {
         } while (!correctValue);
         return value;
     }
+
+    public int getPlayerMoveInFive(){
+        System.out.println("Please choose your move: \nPress '1' for Jason Vorhees\nPress '2' for Freddie Krueger\nPress '3' for Michael Myers\nPress '4' for GhostFace\nPress '5' for Xenomorph");
+        boolean correctValue = false;
+        int value = 0;
+        do {
+            String input = reader.next();
+            try {
+                value = Integer.parseInt(input);
+                if (value < 1 || value > 5) {
+                    correctValue = false;
+                    System.out.println("Incorrect value.");
+                } else {
+                    correctValue = true;
+                }
+            } catch (Exception e) {
+                System.out.println("Incorrect value.");
+            }
+        } while (!correctValue);
+        return value;
+    }
+
+
 
     public void announceRoundResult(int result){
         if (result < 0){
