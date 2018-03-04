@@ -9,7 +9,6 @@ class HumanPlayer implements Player {
         this.NAME = NAME;
     }
 
-    @Override
     public String getName() {
         return this.NAME;
     }

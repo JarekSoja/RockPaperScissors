@@ -2,16 +2,18 @@ package pl.jarek.rockpaperscissors;
 
 public class Main {
 
+    private static void startGame(ProcessorPattern processorPattern){
+        processorPattern.gameLogic();
+    }
+
     public static void main(String[] args) {
-        ProcessorPattern game;
-        Commander commander = new Commander();
-        int gameMode = commander.welcomeMenu();
+
+        int gameMode = Commander.welcomeMenu();
 
         if (gameMode == 1){
-            game = new Processor();
+            startGame(new Processor());
         } else {
-            game = new ProcessorVerFive();
+            startGame(new ProcessorVerFive());
         }
-        game.gameLogic();
     }
 }

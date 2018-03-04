@@ -4,18 +4,16 @@ import java.util.Random;
 
 class ComputerPlayer implements Player {
 
-    private final String NAME;
+    private static final String NAME = "Computer";
     private int points;
     private Random random = new Random();
 
     ComputerPlayer() {
-        this.NAME = "Computer";
         this.points = 0;
     }
 
-    @Override
-    public String getName() {
-        return this.NAME;
+    public static String getName() {
+        return NAME;
     }
 
     @Override
@@ -27,6 +25,7 @@ class ComputerPlayer implements Player {
     public void addPoint () {
         this.points++;
     }
+
 
     public int getComputerMove(){
         return random.nextInt(2);

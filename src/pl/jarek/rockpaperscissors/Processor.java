@@ -12,12 +12,12 @@ public class Processor extends ProcessorPattern {
         this.startingSettings();
         while (this.roundCounter > 0){
             this.roundCounter--;
-            int roundResult = this.setRoundResult(commander.getPlayerMove(),computerPlayer.getComputerMove());
+            int roundResult = this.setRoundResult(Commander.getPlayerMove(),computerPlayer.getComputerMove());
             this.addPoints(roundResult);
-            this.commander.announceRoundResult(roundResult);
-            this.commander.showCurrentStats(humanPlayer.getPoints(), computerPlayer.getPoints(), this.getRoundNumber(), humanPlayer.getName());
+            Commander.announceRoundResult(roundResult);
+            Commander.showCurrentStats(humanPlayer.getPoints(), computerPlayer.getPoints(), this.getRoundNumber(), humanPlayer.getName());
         }
-        this.commander.announceFinalResults(humanPlayer.getPoints(), computerPlayer.getPoints(), humanPlayer.getName());
+        Commander.announceFinalResults(humanPlayer.getPoints(), computerPlayer.getPoints(), humanPlayer.getName());
     }
 
 

@@ -3,7 +3,6 @@ package pl.jarek.rockpaperscissors;
 abstract class ProcessorPattern {
 
     int roundCounter;
-    Commander commander;
     HumanPlayer humanPlayer;
     ComputerPlayer computerPlayer;
 
@@ -12,10 +11,9 @@ abstract class ProcessorPattern {
     }
 
     void startingSettings(){
-        this.commander = new Commander();
-        this.humanPlayer = new HumanPlayer(commander.createNewPlayer());
+        this.humanPlayer = new HumanPlayer(Commander.createNewPlayer());
         this.computerPlayer = new ComputerPlayer();
-        this.roundCounter = commander.setNumberOfRounds();
+        this.roundCounter = Commander.setNumberOfRounds();
     }
 
     void addPoints(int roundResult){
