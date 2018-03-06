@@ -8,20 +8,23 @@ public class Processor extends ProcessorPattern {
             {-1, 1, 0}
     };
 
+    Processor(int roundCounter, HumanPlayer humanPlayer, ComputerPlayer computerPlayer) {
+        super(roundCounter, humanPlayer, computerPlayer);
+    }
+
     public void gameLogic(){
-        this.startingSettings();
-        while (this.roundCounter > 0){
-            this.roundCounter--;
-            int roundResult = this.setRoundResult(Commander.getPlayerMove(),computerPlayer.getComputerMove());
-            this.addPoints(roundResult);
+        while (roundCounter > 0){
+            decrementRoundCounter();
+            int playerMove = Commander.getPlayerMove();
+            int computerMove = computerPlayer.getComputerMove();
+            int roundResult = getRoundResult(playerMove, computerMove);
+            addPoints(roundResult);
             Commander.announceRoundResult(roundResult);
             Commander.showCurrentStats(humanPlayer.getPoints(), computerPlayer.getPoints(), this.getRoundNumber(), humanPlayer.getName());
         }
         Commander.announceFinalResults(humanPlayer.getPoints(), computerPlayer.getPoints(), humanPlayer.getName());
     }
-
-
-    int setRoundResult(int playerMove, int computerMove) {
+    int getRoundResult(int playerMove, int computerMove) {
         return results[playerMove][computerMove];
     }
 }

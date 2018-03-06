@@ -22,7 +22,6 @@ public class Commander {
                 System.out.println("Incorrect value.");
             }
         } while (true);
-
     }
 
     public static void showInstructions(){
@@ -41,7 +40,7 @@ public class Commander {
         System.out.println(roundNumber + " rounds left to play.");
     }
 
-    public static int setNumberOfRounds(){
+    public static int getNumberOfRounds(){
         System.out.println("Please enter number of rounds you wish to play: ");
         boolean correctValue = false;
         int value = 0;
@@ -49,12 +48,13 @@ public class Commander {
             String input = reader.next();
             try {
                 value = Integer.parseInt(input);
-                correctValue = input.chars().allMatch(Character::isDigit);
+                correctValue = value >= 1;
+                correctValue = true;
             } catch (Exception e) {
                 System.out.println("Incorrect value.");
             }
         } while (!correctValue);
-       return value;
+        return value;
     }
 
     public static int getPlayerMove(){
@@ -98,8 +98,6 @@ public class Commander {
         } while (!correctValue);
         return value;
     }
-
-
 
     public static void announceRoundResult(int result){
         if (result < 0){

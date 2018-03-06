@@ -16,12 +16,10 @@ class ComputerPlayer implements Player {
         return NAME;
     }
 
-    @Override
     public int getPoints () {
         return this.points;
     }
 
-    @Override
     public void addPoint () {
         this.points++;
     }

@@ -10,10 +10,10 @@ abstract class ProcessorPattern {
         return this.roundCounter;
     }
 
-    void startingSettings(){
-        this.humanPlayer = new HumanPlayer(Commander.createNewPlayer());
-        this.computerPlayer = new ComputerPlayer();
-        this.roundCounter = Commander.setNumberOfRounds();
+    ProcessorPattern(int roundCounter, HumanPlayer humanPlayer, ComputerPlayer computerPlayer) {
+        this.roundCounter = roundCounter;
+        this.humanPlayer = humanPlayer;
+        this.computerPlayer = computerPlayer;
     }
 
     void addPoints(int roundResult){
@@ -25,7 +25,11 @@ abstract class ProcessorPattern {
         } else System.out.println("No points added.");
     }
 
-    abstract int setRoundResult(int playerMove, int computerMove);
+    void decrementRoundCounter() {
+        roundCounter--;
+    }
+
+    abstract int getRoundResult(int playerMove, int computerMove);
 
     abstract void gameLogic();
 

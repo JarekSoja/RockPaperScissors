@@ -5,6 +5,11 @@ class HumanPlayer implements Player {
     private final String NAME;
     private int points;
 
+    HumanPlayer(String NAME, int points) {
+        this.NAME = NAME;
+        this.points = points;
+    }
+
     HumanPlayer(String NAME) {
         this.NAME = NAME;
     }
@@ -13,12 +18,10 @@ class HumanPlayer implements Player {
         return this.NAME;
     }
 
-    @Override
     public int getPoints() {
         return this.points;
     }
 
-    @Override
     public void addPoint() {
         this.points++;
     }
