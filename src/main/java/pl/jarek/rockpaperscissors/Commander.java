@@ -26,11 +26,11 @@ public class Commander {
 
     public static void showInstructions(){
         System.out.println("So you want to taste the fear?\nWe will be playing extreme halloween version of everyone's favourite game with iconic horror monsters as our pawns.");
-        System.out.println("First will be Jason Vorhees straight from Friday the 13th series with his iconic machete\nPress '1' to choose him.");
-        System.out.println("Second is Freddie Krueger coming from Elm Street packing unforgettable glove that wrecks Jason!\nPress '2' to choose him.");
-        System.out.println("Third is Michael Myers with huge kitchen knife that makes holes in this striped jumper of Freddie's\nPress '3' to choose him.");
-        System.out.println("Fourth contestant - GhostFace from Scream with his/her creepy phone that makes Michael Myers faint.\nPress '4' to choose him/her");
-        System.out.println("Last but not least is Xenomorph that easily beast cheap phone tricks of GhostFace.\nPress '5' to choose it");
+        System.out.println("First will be Jason Vorhees straight from Friday the 13th series with his iconic machete\nPress '0' to choose him.");
+        System.out.println("Second is Freddie Krueger coming from Elm Street packing unforgettable glove that wrecks Jason!\nPress '1' to choose him.");
+        System.out.println("Third is Michael Myers with huge kitchen knife that makes holes in this striped jumper of Freddie's\nPress '2' to choose him.");
+        System.out.println("Fourth contestant - GhostFace from Scream with his/her creepy phone that makes Michael Myers faint.\nPress '3' to choose him/her");
+        System.out.println("Last but not least is Xenomorph that easily beast cheap phone tricks of GhostFace.\nPress '4' to choose it");
         System.out.println("And finally - Jason beats puny xenomorph with his trusted machete!");
         System.out.println("Summarizing: \n 5 beats 4 that beats 3 that beats 2 that beats 1 that beats 5");
     }
@@ -79,14 +79,14 @@ public class Commander {
     }
 
     public static int getPlayerMoveInFive(){
-        System.out.println("Please choose your move: \nPress '1' for Jason Vorhees\nPress '2' for Freddie Krueger\nPress '3' for Michael Myers\nPress '4' for GhostFace\nPress '5' for Xenomorph");
+        System.out.println("Please choose your move: \nPress '0' for Jason Vorhees\nPress '1' for Freddie Krueger\nPress '2' for Michael Myers\nPress '3' for GhostFace\nPress '4' for Xenomorph");
         boolean correctValue = false;
         int value = 0;
         do {
             String input = reader.next();
             try {
                 value = Integer.parseInt(input);
-                if (value < 1 || value > 5) {
+                if (value < 0 || value > 4) {
                     correctValue = false;
                     System.out.println("Incorrect value.");
                 } else {

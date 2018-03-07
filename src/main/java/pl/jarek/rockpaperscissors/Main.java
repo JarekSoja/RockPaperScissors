@@ -12,11 +12,11 @@ public class Main {
         if (gameMode == 1){
             String playerName = Commander.createNewPlayer();
             int roundCount = Commander.getNumberOfRounds();
-            startGame(new Processor(roundCount, new HumanPlayer(playerName), new ComputerPlayer()));
+            startGame(new Processor(roundCount, new HumanPlayer(playerName), new ComputerPlayer(YamlReader.reader())));
         } else {
             String playerName = Commander.createNewPlayer();
             int roundCount = Commander.getNumberOfRounds();
-            startGame(new ProcessorVerFive(roundCount, new HumanPlayer(playerName), new ComputerPlayer()));
+            startGame(new ProcessorVerFive(roundCount, new HumanPlayer(playerName), new ComputerPlayer(YamlReader.reader())));
         }
     }
 }

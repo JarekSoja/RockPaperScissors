@@ -16,7 +16,7 @@ public class Processor extends ProcessorPattern {
         while (roundCounter > 0){
             decrementRoundCounter();
             int playerMove = Commander.getPlayerMove();
-            int computerMove = computerPlayer.getComputerMove();
+            int computerMove = computerPlayer.getComputerMove(playerMove);
             int roundResult = getRoundResult(playerMove, computerMove);
             addPoints(roundResult);
             Commander.announceRoundResult(roundResult);

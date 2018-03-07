@@ -1,0 +1,4 @@
+# Configuration file for my game
+# --------------- #
+cheatingInClassicVersion: true
+cheatingInFiveVersion: false

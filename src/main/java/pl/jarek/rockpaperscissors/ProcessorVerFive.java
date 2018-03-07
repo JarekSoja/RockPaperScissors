@@ -18,11 +18,13 @@ class ProcessorVerFive extends ProcessorPattern {
         return results[playerMove][computerMove];
     }
 
-    public void gameLogic(){
+    public void gameLogic() {
         Commander.showInstructions();
         while (roundCounter > 0){
             decrementRoundCounter();
-            int roundResult = getRoundResult(Commander.getPlayerMoveInFive(),computerPlayer.getComputerMoveInFive());
+            int playerMove = Commander.getPlayerMoveInFive();
+            int computerMove = computerPlayer.getComputerMoveInFive(playerMove);
+            int roundResult = getRoundResult(playerMove,computerMove);
             addPoints(roundResult);
             Commander.announceRoundResult(roundResult);
             Commander.showCurrentStats(humanPlayer.getPoints(), computerPlayer.getPoints(), getRoundNumber(), humanPlayer.getName());
