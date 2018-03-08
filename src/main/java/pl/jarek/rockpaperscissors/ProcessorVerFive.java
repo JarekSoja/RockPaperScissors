@@ -31,6 +31,10 @@ class ProcessorVerFive extends ProcessorPattern {
 
         }
         Commander.announceFinalResults(humanPlayer.getPoints(), computerPlayer.getPoints(), humanPlayer.getName());
+        if (Commander.nextRound() == 'y'){
+            roundCounter = Commander.getNumberOfRounds();
+            gameLogic();
+        }
     }
 
 }

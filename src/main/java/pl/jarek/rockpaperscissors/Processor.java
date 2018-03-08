@@ -23,7 +23,12 @@ public class Processor extends ProcessorPattern {
             Commander.showCurrentStats(humanPlayer.getPoints(), computerPlayer.getPoints(), this.getRoundNumber(), humanPlayer.getName());
         }
         Commander.announceFinalResults(humanPlayer.getPoints(), computerPlayer.getPoints(), humanPlayer.getName());
+        if (Commander.nextRound() == 'y'){
+                roundCounter = Commander.getNumberOfRounds();
+                gameLogic();
+        }
     }
+
     int getRoundResult(int playerMove, int computerMove) {
         return results[playerMove][computerMove];
     }

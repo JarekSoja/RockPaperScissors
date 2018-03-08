@@ -12,7 +12,7 @@ public class Commander {
     }
 
     public static int welcomeMenu(){
-        System.out.println("Hi! We are going to play rock scissors paper game. Please choose game mode:\n1. Classic game we all know and love");
+        System.out.println("We are going to play rock scissors paper game. Please choose game mode:\n1. Classic game we all know and love");
         System.out.println("2. Extreme Halloween mode where we will be using tools straight from classic horror movies.");
         do {
             int gameMode = (reader.nextInt());
@@ -115,4 +115,26 @@ public class Commander {
         else if (playerPoints > computerPoints) System.out.println("You won! Good job.");
         else System.out.println("Draw. We should play again to settle the score, hombre.");
     }
+    public static char nextRound(){
+        System.out.println("Do you wish to play again?\nPress 'y' if yes, 'n' if no.");
+        boolean correctValue = false;
+        char value = '0';
+        do {
+            String input = reader.next();
+            try {
+                value = input.charAt(0);
+                if (value != 'y' && value != 'n') {
+                    correctValue = false;
+                    System.out.println("Incorrect value.");
+                } else {
+                    correctValue = true;
+                }
+            } catch (Exception e) {
+                System.out.println("Incorrect value.");
+            }
+        } while (!correctValue);
+        return value;
+    }
+
+
 }
