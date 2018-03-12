@@ -10,7 +10,7 @@ public class YamlReader {
     public static Cheater reader() {
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
         try {
-            return mapper.readValue(new File("C:\\Users\\Jarek\\IdeaProjects\\rockpaperscissors\\src\\main\\resources\\config.txt"), Cheater.class);
+            return mapper.readValue(new File(".\\src\\main\\resources\\config.txt"), Cheater.class);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -18,3 +18,4 @@ public class YamlReader {
         }
     }
 }
+

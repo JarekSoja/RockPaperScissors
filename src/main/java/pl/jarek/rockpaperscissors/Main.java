@@ -1,5 +1,7 @@
 package pl.jarek.rockpaperscissors;
 
+import java.io.File;
+
 public class Main {
 
     private static void startGame(ProcessorPattern processorPattern){
@@ -7,6 +9,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
+
         String playerName = Commander.createNewPlayer();
 
         int gameMode = Commander.welcomeMenu();
