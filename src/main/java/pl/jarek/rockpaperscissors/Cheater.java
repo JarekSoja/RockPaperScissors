@@ -5,7 +5,7 @@ public class Cheater {
     private boolean cheatingInClassicVersion;
     private boolean cheatingInFiveVersion;
 
-    public Cheater(){
+    public Cheater() {
     }
 
     public boolean isCheatingInClassicVersion() {

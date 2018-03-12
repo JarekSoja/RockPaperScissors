@@ -7,10 +7,12 @@ import java.io.File;
 
 public class YamlReader {
 
-    public static Cheater reader() {
+    public Cheater reader() {
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
         try {
-            return mapper.readValue(new File(".\\src\\main\\resources\\config.txt"), Cheater.class);
+            ClassLoader classLoader = getClass().getClassLoader();
+            File file = new File(classLoader.getResource("file/test.xml").getFile());
+            return mapper.readValue(file, Cheater.class);
 
         } catch (Exception e) {
             e.printStackTrace();

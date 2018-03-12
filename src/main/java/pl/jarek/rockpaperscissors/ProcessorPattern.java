@@ -6,7 +6,7 @@ abstract class ProcessorPattern {
     HumanPlayer humanPlayer;
     ComputerPlayer computerPlayer;
 
-    int getRoundNumber(){
+    int getRoundNumber() {
         return this.roundCounter;
     }
 
@@ -16,11 +16,10 @@ abstract class ProcessorPattern {
         this.computerPlayer = computerPlayer;
     }
 
-    void addPoints(int roundResult){
+    void addPoints(int roundResult) {
         if (roundResult > 0) {
             humanPlayer.addPoint();
-        }
-        else if (roundResult < 0) {
+        } else if (roundResult < 0) {
             computerPlayer.addPoint();
         } else System.out.println("No points added.");
     }

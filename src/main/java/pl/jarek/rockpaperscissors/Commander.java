@@ -6,12 +6,12 @@ public class Commander {
 
     private static Scanner reader = new Scanner(System.in);
 
-    public static String createNewPlayer(){
+    public static String createNewPlayer() {
         System.out.println("Please give me your name.");
         return reader.next();
     }
 
-    public static int welcomeMenu(){
+    public static int welcomeMenu() {
         System.out.println("We are going to play rock scissors paper game. Please choose game mode:\n1. Classic game we all know and love");
         System.out.println("2. Extreme Halloween mode where we will be using tools straight from classic horror movies.");
         do {
@@ -24,7 +24,7 @@ public class Commander {
         } while (true);
     }
 
-    public static void showInstructions(){
+    public static void showInstructions() {
         System.out.println("So you want to taste the fear?\nWe will be playing extreme halloween version of everyone's favourite game with iconic horror monsters as our pawns.");
         System.out.println("First will be Jason Vorhees straight from Friday the 13th series with his iconic machete\nPress '0' to choose him.");
         System.out.println("Second is Freddie Krueger coming from Elm Street packing unforgettable glove that wrecks Jason!\nPress '1' to choose him.");
@@ -35,12 +35,12 @@ public class Commander {
         System.out.println("Summarizing: \n 5 beats 4 that beats 3 that beats 2 that beats 1 that beats 5");
     }
 
-    public static void showCurrentStats(int playerPoints, int computerPoints, int roundNumber, String playerName){
+    public static void showCurrentStats(int playerPoints, int computerPoints, int roundNumber, String playerName) {
         System.out.println(playerName + " has " + playerPoints + " point/s\nComputer has " + computerPoints + " point/s.");
         System.out.println(roundNumber + " rounds left to play.");
     }
 
-    public static int getNumberOfRounds(){
+    public static int getNumberOfRounds() {
         System.out.println("Please enter number of rounds you wish to play: ");
         boolean correctValue = false;
         int value = 0;
@@ -57,7 +57,7 @@ public class Commander {
         return value;
     }
 
-    public static int getPlayerMove(){
+    public static int getPlayerMove() {
         System.out.println("Please choose your move: \nPress '0' for rock\nPress '1' for paper\nPress '2' for scissors");
         boolean correctValue = false;
         int value = 0;
@@ -78,7 +78,7 @@ public class Commander {
         return value;
     }
 
-    public static int getPlayerMoveInFive(){
+    public static int getPlayerMoveInFive() {
         System.out.println("Please choose your move: \nPress '0' for Jason Vorhees\nPress '1' for Freddie Krueger\nPress '2' for Michael Myers\nPress '3' for GhostFace\nPress '4' for Xenomorph");
         boolean correctValue = false;
         int value = 0;
@@ -99,15 +99,15 @@ public class Commander {
         return value;
     }
 
-    public static void announceRoundResult(int result){
-        if (result < 0){
+    public static void announceRoundResult(int result) {
+        if (result < 0) {
             System.out.println("I won!");
         } else if (result > 0) {
             System.out.println("You won!");
         } else System.out.println("It's a draw!");
     }
 
-    public static void announceFinalResults(int playerPoints, int computerPoints, String playerName){
+    public static void announceFinalResults(int playerPoints, int computerPoints, String playerName) {
         System.out.println("Game finished");
         System.out.println("Player " + playerName + " got " + playerPoints + " points.");
         System.out.println("Player " + ComputerPlayer.getName() + " got " + computerPoints + " points.");
@@ -115,7 +115,8 @@ public class Commander {
         else if (playerPoints > computerPoints) System.out.println("You won! Good job.");
         else System.out.println("Draw. We should play again to settle the score, hombre.");
     }
-    public static char nextRound(){
+
+    public static char nextRound() {
         System.out.println("Do you wish to play again?\nPress 'y' if yes, 'n' if no.");
         boolean correctValue = false;
         char value = '0';

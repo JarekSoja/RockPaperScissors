@@ -12,8 +12,8 @@ public class Processor extends ProcessorPattern {
         super(roundCounter, humanPlayer, computerPlayer);
     }
 
-    public void gameLogic(){
-        while (roundCounter > 0){
+    public void gameLogic() {
+        while (roundCounter > 0) {
             decrementRoundCounter();
             int playerMove = Commander.getPlayerMove();
             int computerMove = computerPlayer.getComputerMove(playerMove);
@@ -23,9 +23,9 @@ public class Processor extends ProcessorPattern {
             Commander.showCurrentStats(humanPlayer.getPoints(), computerPlayer.getPoints(), this.getRoundNumber(), humanPlayer.getName());
         }
         Commander.announceFinalResults(humanPlayer.getPoints(), computerPlayer.getPoints(), humanPlayer.getName());
-        if (Commander.nextRound() == 'y'){
-                roundCounter = Commander.getNumberOfRounds();
-                gameLogic();
+        if (Commander.nextRound() == 'y') {
+            roundCounter = Commander.getNumberOfRounds();
+            gameLogic();
         }
     }
 

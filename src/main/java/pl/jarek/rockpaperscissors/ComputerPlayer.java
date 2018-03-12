@@ -21,11 +21,11 @@ class ComputerPlayer implements Player {
         return NAME;
     }
 
-    public int getPoints () {
+    public int getPoints() {
         return this.points;
     }
 
-    public void addPoint () {
+    public void addPoint() {
         this.points++;
     }
 
@@ -42,7 +42,7 @@ class ComputerPlayer implements Player {
         }
     }
 
-    public int getComputerMoveInFive(int playerMove){
+    public int getComputerMoveInFive(int playerMove) {
         if (!cheater.isCheatingInFiveVersion()) {
             return random.nextInt(4);
         } else {
